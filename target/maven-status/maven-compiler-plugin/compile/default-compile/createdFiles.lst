@@ -1,0 +1,6 @@
+com\kss\data\repository\impl\UserRepositoryImpl.class
+com\kss\data\CommonDataModelApplication.class
+com\kss\data\entity\Users.class
+com\kss\data\configuration\Jpa.class
+com\kss\data\repository\UsersRepository.class
+com\kss\data\PasswordEncryption.class

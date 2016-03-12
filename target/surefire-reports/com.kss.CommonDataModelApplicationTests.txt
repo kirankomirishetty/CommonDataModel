@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.kss.CommonDataModelApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.904 sec - in com.kss.CommonDataModelApplicationTests
