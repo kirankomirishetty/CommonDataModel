@@ -71,7 +71,7 @@ public class Jpa {
 		LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
 		localContainerEntityManagerFactoryBean.setDataSource(getDataSource());
 		
-		localContainerEntityManagerFactoryBean.setPackagesToScan("com.kss.data.entity");
+		localContainerEntityManagerFactoryBean.setPackagesToScan("com.kss.data.login.entity");
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		localContainerEntityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);
 		

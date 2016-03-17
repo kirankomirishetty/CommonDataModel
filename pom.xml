@@ -63,11 +63,16 @@
 	</build>
 	<distributionManagement>
 	  <!-- Repository for snapshots -->
-	  <repository>
+	  <snapshotRepository>
 	      <id>nexus</id>
-	      <url>http://localhost:8081/nexus/content/groups/public</url>
+	      <name>Nexus Snapshots</name>
+	      <url>http://ec2-52-87-56-158.compute-1.amazonaws.com:7080/nexus/content/repositories/snapshots</url>
+	  </snapshotRepository>
+	 <repository>
+	      <id>nexus</id>
+	      <name>Nexus Releases</name>
+	      <url>http://ec2-52-87-56-158.compute-1.amazonaws.com:7080/nexus/content/repositories/releases</url>
 	  </repository>
-	 
 </distributionManagement>
 
 </project>

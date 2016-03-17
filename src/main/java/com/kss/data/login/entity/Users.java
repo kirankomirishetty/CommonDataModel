@@ -1,6 +1,6 @@
-package com.kss.data.entity;
+package com.kss.data.login.entity;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,14 +22,16 @@ public class Users {
 	@Column(name="ROLE_ID")
 	private String roleId;
 	
-	@Column(name="INSERT_TS")
-	private Date insertTS;
+	@Column(name="INSERT_TS", updatable=false, insertable=true)
+//	@Temporal(TemporalType.TIMESTAMP)
+	private Timestamp insertTS;
 	
 	@Column(name="INSERTED_BY")
 	private String insertedBy;
 	
-	@Column(name="UPDATE_TS")
-	private Date updateTS;
+	@Column(name="UPDATE_TS", insertable=true, updatable=true)
+//	@Temporal(TemporalType.TIMESTAMP)
+	private Timestamp updateTS;
 	
 	@Column(name="UPDATED_BY")
 	private String upatedBy;
@@ -99,14 +101,14 @@ public class Users {
 	/**
 	 * @return the insertTS
 	 */
-	public Date getInsertTS() {
+	public Timestamp getInsertTS() {
 		return insertTS;
 	}
 
 	/**
 	 * @param insertTS the insertTS to set
 	 */
-	public void setInsertTS(Date insertTS) {
+	public void setInsertTS(Timestamp insertTS) {
 		this.insertTS = insertTS;
 	}
 
@@ -127,14 +129,14 @@ public class Users {
 	/**
 	 * @return the updateTS
 	 */
-	public Date getUpdateTS() {
+	public Timestamp getUpdateTS() {
 		return updateTS;
 	}
 
 	/**
 	 * @param updateTS the updateTS to set
 	 */
-	public void setUpdateTS(Date updateTS) {
+	public void setUpdateTS(Timestamp updateTS) {
 		this.updateTS = updateTS;
 	}
 

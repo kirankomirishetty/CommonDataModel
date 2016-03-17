@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.kss.data.repository.impl;
+package com.kss.data.login.repository.impl;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,21 +12,22 @@ import javax.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.kss.data.entity.Users;
-import com.kss.data.repository.UsersRepository;
+import com.kss.data.exception.RecordNotExistsException;
+import com.kss.data.login.entity.Users;
+import com.kss.data.login.repository.UsersRepository;
 
 /**
  * @author kiran
  *
  */
 @Component
-public class UserRepositoryImpl {
+public class UsersDataHelper {
 
 	UsersRepository usersRepository;
 	EntityManager entityManager;
 	
 	@Autowired
-	public UserRepositoryImpl(UsersRepository usersRepository, EntityManager entityManager) {
+	public UsersDataHelper(UsersRepository usersRepository, EntityManager entityManager) {
 		super();
 		this.usersRepository = usersRepository;
 		this.entityManager = entityManager;
@@ -42,15 +43,24 @@ public class UserRepositoryImpl {
 		return usersList;
 	}
 	
-	public Users findByUserName(String userName) {
+	public Users findByUserName(String userName) throws RecordNotExistsException {
+		Users user = usersRepository.findByUserName(userName);
+
+		if (user == null) {
+			throw new RecordNotExistsException("Unable to find the user with login id ["+userName+"]");
+		}
+		return null;
+	}
+	
+	public boolean isUserExists(String userName) {
 		List<Users> usersList = listAllUsers();
 		
 		for (Users user:usersList){
 			if (userName.equalsIgnoreCase(user.getUserName())) {
-				return user;
+				return true;
 			}
 		}
-		return null;
+		return false;
 	}
 	
 	public boolean createUser(Users users) {
