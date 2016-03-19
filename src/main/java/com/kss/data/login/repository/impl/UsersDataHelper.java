@@ -49,7 +49,7 @@ public class UsersDataHelper {
 		if (user == null) {
 			throw new RecordNotExistsException("Unable to find the user with login id ["+userName+"]");
 		}
-		return null;
+		return user;
 	}
 	
 	public boolean isUserExists(String userName) {

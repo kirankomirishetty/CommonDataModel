@@ -73,6 +73,6 @@
 	      <name>Nexus Releases</name>
 	      <url>http://ec2-52-87-56-158.compute-1.amazonaws.com:7080/nexus/content/repositories/releases</url>
 	  </repository>
-</distributionManagement>
+	</distributionManagement>
 
 </project>
