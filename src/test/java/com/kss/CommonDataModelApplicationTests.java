@@ -27,6 +27,7 @@ public class CommonDataModelApplicationTests {
 	@Test
 	public void contextLoads() {
 		System.out.println("Inside the testing...."+userRepositoryImpl);
+		rolesDataHelper.getTables();
 		System.out.println("userRepositoryImpl "+userRepositoryImpl.listAllUsers());
 		System.out.println("User By Name "+userRepository.findByUserName("admin@gmail.com"));
 	}

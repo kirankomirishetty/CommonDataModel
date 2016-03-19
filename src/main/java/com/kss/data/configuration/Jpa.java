@@ -3,6 +3,8 @@
  */
 package com.kss.data.configuration;
 
+import java.sql.SQLException;
+
 import javax.sql.DataSource;
 
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
@@ -56,7 +58,6 @@ public class Jpa {
 	}
 	@Bean
 	public DataSource getDataSource() {
-		System.out.println(username+"  "+password+"   "+url+"   "+driverClassName);
 	
 		DataSource dataSource = DataSourceBuilder.create()
 			.driverClassName(driverClassName)
@@ -66,7 +67,7 @@ public class Jpa {
 		
 		return dataSource;
 	}
-	@Bean
+	/*@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() throws Exception {
 		LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
 		localContainerEntityManagerFactoryBean.setDataSource(getDataSource());
@@ -77,6 +78,6 @@ public class Jpa {
 		
 		return localContainerEntityManagerFactoryBean;
 		
-	}
+	}*/
 
 }
